@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maxim-scale=1, user-scalable=no">
+		<title>Location PoP</title>
+		<link href="bootstrap335/css/bootstrap.min.css" rel="stylesheet">
+		<link href="bootstrap335/css/bootstrap-theme.min.css" rel="stylesheet">
+		<link href="main.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container bg">
+			<div class="col-md-7">
+				<div class="roundinside">
+					<ul class="nav nav-tabs" role="maptab" id="maptab">
+						<li class="active"><a href="#L1" data-toggle="tab">L1</a></li>   <!-- add .hidden to remove tab !-->
+						<li><a href="#L2" data-toggle="tab">L2</a></li>
+					</ul>
+					<div class="tab-content">
+						<div class="tab-pane fade active in" id="L1">
+							<div class="mapcover">
+							<img src="image/L11-wide.png" class="img-responsive center-block">
+							<a href="#" class="btn btn-sm btn-circle tag">
+								<img src="image/bikini60s_flag.svg" class="img-responsive">
+							</a>
+							</div>
+						</div>
+						<div class="tab-pane fade" id="L2">
+							<img src="image/L22-wide.png" class="img-responsive center-block">
+						</div>
+					</div>
+
+
+<!--				<h1 class="text-center" id="L1">Map location</h1>
+							<img src="image/main load v2.png" class="img-responsive center-block">
+!-->
+				</div>
+			</div>
+			<div class="col-md-5">
+				<div class="roundinside">
+					<blockquote class="text-right">
+						<p>Location PoP 1호점</p>
+						<footer>since 2015<br>#카페,#일식</footer>
+					</blockquote>
+					<dl>
+						<dt>Event</dt>
+						<dd><a href="#">오픈 기념 사은품 증정</a></dd>
+						<dd>9시이전 방문 50% 할인</dd>
+						<dd>단골 고객을 위한 셋트매뉴</dd>
+						<dt>Review</dt>
+						<dd>와우 이런 맛집이! naver</dd>
+						<dd>나혜석거리 꼭 가봐야할 집 tistory</dd>
+					</dl>
+				</div>
+				<div class="roundinside">
+					<div class="row">
+						<div class="col-md-4">
+							<div class="thumbnail">
+								<img src="image/map.jpg" alt="준비중">
+								<div class="caption">
+									<h3>Title</h3>
+									<p>이곳은 테그들</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="thumbnail">
+								<img src="image/map.jpg" alt="준비중">
+								<div class="caption">
+									<h3>Title2</h3>
+									<p>이곳은 테그들</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="thumbnail">
+								<img src="image/map.jpg" alt="준비중">
+								<div class="caption">
+									<h3>Title3</h3>
+									<p>이곳은 테그들</p>
+								</div>
+							</div>
+						</div>
+						<h1 class="text-center">.</h1>
+						<h1 class="text-center">.</h1>
+						<h1 class="text-center">.</h1>
+					</div>
+				</div>
+			</div>
+						<div class="col-md-12">
+				<div class="roundinside">
+					<address>
+						<strong>PoP Loaction</strong><br>
+						나혜석거리, 인계동<br>
+						팔달구, 수원, 대한민국<br>
+						<abbr title="email">E:</abbr><a href="mailto:#">PoPlocation@ready.com</a><br>
+						<abbr title="phone">P:</abbr>031-2##-####
+					</address>
+				</div>
+			</div>
+		</div>
+	
+		
+		<script src="jquery1.11.3/jquery-1.11.3.js"></script>
+		<script src="bootstrap335/js/bootstrap.min.js"></script>
+		<script src="jquerymoblie1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		<script>
+			$(function(){
+				$(".tab-content").swiperight(function(){
+					var $tab = $('#maptab .active').prev();
+					if ($tab.length>0)
+						$tab.find('a').tab('show');
+				});
+				$(".tab-content").swipeleft(function(){
+					var $tab = $('#maptab .active').next();
+					if ($tab.length>0)
+						$tab.find('a').tab('show');
+				});				
+			});
+			$.mobile.loading().hide();  //to remove 'loading' msg which is stick on last
+			$(document).ready(function(){
+
+				});
+				
+		</script>
+	</body>
+</html>

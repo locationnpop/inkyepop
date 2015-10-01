@@ -1,0 +1,33 @@
+body {
+	background-color:#C0DEED;
+	padding-top: 0px;
+	padding-bottom: 40px;
+	font-family:"Calisto MT";
+}
+.bg{
+	padding:15px;
+	background:#BCE8F1;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+}
+
+.roundinside{
+	padding:10px;
+	background-color:white;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius:6px;
+	margin-bottom:3px;
+}
+
+.tag{
+	position:absolute;
+	top:50%;
+	left:10%;
+	border-radius:50%
+}
+
+.mapcover{
+	position:relative;
+}
