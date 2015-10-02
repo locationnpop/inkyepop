@@ -5,3 +5,4 @@ line2
 
 commit test
 
+notebook test
