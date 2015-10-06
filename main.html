@@ -135,10 +135,13 @@ tab mode !-->
 		<script type="text/javascript">
 			var map;
 			function initMap(){
-				map = new google.maps.Map(document.getElementById('map'),{
+				var mapOptions={
+					zoom:16,
 					center: {lat:37.263285, lng: 127.036383},
-					zoom:16
-				});
+					disableDefaultUI : true
+				}
+				
+				map = new google.maps.Map(document.getElementById('map'),mapOptions);
 			}
 		</script>
 		
