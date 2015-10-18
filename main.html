@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1, maxim-scale=1, user-scalable=no">
+		<meta name="viewport" content="initial-scale=1, user-scalable=no">
 		<title>Location PoP</title>
 		<link href="bootstrap335/css/bootstrap.min.css" rel="stylesheet">
 		<link href="bootstrap335/css/bootstrap-theme.min.css" rel="stylesheet">
@@ -16,7 +16,7 @@
 			<div class="col-md-7 map">
 				<div class="roundinside">
 <!-- google map mode !-->
-					<div id="map" style="width: auto; min-height: 500px">
+					<div id="map" style="width: auto; height: 600px">
       				</div>
 					
 					
@@ -114,7 +114,7 @@ tab mode !-->
 		<script src="bootstrap335/js/bootstrap.min.js"></script>
 		<script src="jquerymoblie1.4.5/jquery.mobile-1.4.5.min.js"></script>
 		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWVtaTcKd0MZxPlBhM2YVncfVQZB4I3ZU&callback=initMap"></script>
-		<script>
+	<!--	<script>
 			$(function(){
 				$(".tab-content").swiperight(function(){
 					var $tab = $('#maptab .active').prev();
@@ -131,18 +131,49 @@ tab mode !-->
 			$(document).ready(function(){
 
 				});
-		</script>
-		<script type="text/javascript">
-			var map;
+	</script> !-->
+		<script>
+			var marker; // make it global to use at toggleBounce function
 			function initMap(){
 				var mapOptions={
 					zoom:16,
 					center: {lat:37.263285, lng: 127.036383},
-					disableDefaultUI : true
-				}
+					disableDefaultUI : true,
+					draggable:true,
+		
+				};
+				var map = new google.maps.Map(document.getElementById('map'),mapOptions);
+			
+				var image = "image/bikini60s_flag.svg";
+				marker = new google.maps.Marker({
+					map:map,
+					position: {lat:37.263285, lng: 127.036383},
+					title: 'test',
+					animation: google.maps.Animation.DROP,
+					icon:image
+
+					});
 				
-				map = new google.maps.Map(document.getElementById('map'),mapOptions);
+				var infowindow=new google.maps.InfoWindow({
+					content:"ok"
+				});
+				
+
+				marker.addListener('click', toggleBounce);
+				marker.addListener('click', function(){
+					infowindow.open(map,marker);
+				});
 			}
+			
+			function toggleBounce(){
+				
+				if(marker.getAnimation()!==null){
+					marker.setAnimation(null);
+				}else{
+					marker.setAnimation(google.maps.Animation.BOUNCE);
+				}
+			}	
+
 		</script>
 		
 	</body>
